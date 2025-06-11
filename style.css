@@ -43,7 +43,8 @@
   text-align: center;
   background-color: #f5f5f5;
 }
-.shop-name {
+.shop-name,
+h2 {
   font-family: "Dancing Script";
   font-weight: bold;
   font-size: 50px;
@@ -119,7 +120,6 @@
   #leftside {
     flex: 2;
   }
-
   #rightside {
     flex: 1;
     position: sticky;
@@ -127,7 +127,6 @@
     margin-left: 20px;
     height: fit-content;
   }
-
   .col {
     width: 30%;
   }
