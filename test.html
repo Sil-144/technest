@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Repeated Add to Cart</title>
+  </head>
+  <body>
+    <h2>Shopping Cart</h2>
+    <p>Total Price: $<span id="total">0.00</span></p>
+
+    <button onclick="addToCart(29.99)">Add Item ($29.99)</button>
+
+    <script>
+      let total = 0;
+
+      function addToCart(price) {
+        total += price; // Add price every time the button is clicked
+        document.getElementById("total").textContent = total.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .main-container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      #leftside {
+        width: 75%;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      #rightside {
+        width: 25%;
+        background-color: antiquewhite;
+        padding: 20px;
+        position: sticky;
+        top: 20px; /* Distance from the top of the viewport */
+        height: 100%;
+      }
+      .nav-link,
+      .text-log {
+        color: white;
+      }
+      .col {
+        margin: 2px;
+        width: 30%;
+        margin-top: 80px;
+        margin-left: 30px;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 0;
+      }
+      #reviewOrd {
+        border: 2px solid black;
+        padding: 6px;
+        align-items: center;
+        outline: none;
+        text-decoration: none;
+        border-radius: 8px;
+        background-color: black;
+        color: antiquewhite;
+      }
+      @media (max-width: 768px) {
+        .main-container {
+          flex-direction: column;
+        }
+
+        #leftside,
+        #rightside {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid" style="background-color: black">
+        <a class="navbar-brand" href="#">
+          <img
+            src="#"
+            alt="Logo"
+            width="50"
+            height="44"
+            class="d-inline-block align-text-top"
+          />
+          <span class="text-log">MayZinThaw</span>
+        </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <section id="leftside">
+        <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+          <div class="col">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(13)"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rightside">
+        <h1>Order Summery</h1>
+        <p>Selected Items:<span id="cost">$0.00</span></p>
+        <p>Total price:<span id="cost1">$0.00</span></p>
+        <p>Total Shipping:<span id="cost2">$0.00</span></p>
+        <p>Tax:<span id="cost3">$0.00</span></p>
+        <p>Grand Total:<span id="cost4">$0.00</span></p>
+        <a href="" id="reviewOrd">Review Orders</a>
+      </section>
+    </div>
+
+    <script>
+      let totalPrice = 0;
+      let tax1 = 0;
+      let i = 0;
+      function calTotal(price) {
+        let s1 = 1;
+        let taxRate = 0.1;
+        i++;
+        totalPrice += price;
+        tax1 += totalPrice * taxRate;
+        let grandTotal = totalPrice + s1 + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        shipping;
+        document.getElementById("cost2").textContent = "$ " + shipping;
+
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal1(price1) {
+        let shipping = 1;
+        let taxRate2 = 0.2;
+        i++;
+        totalPrice += price1;
+        tax1 += totalPrice * taxRate2;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal2(price2) {
+        let shipping = 5;
+        let taxRate3 = 0.2;
+        i++;
+        totalPrice += price2;
+        tax1 += totalPrice * taxRate3;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal3(price3) {
+        let shipping = 12;
+        let taxRate4 = 0.5;
+        i++;
+        totalPrice += price3;
+        tax1 += totalPrice * taxRate4;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal4(price4) {
+        let shipping = 12;
+        let taxRate5 = 0.5;
+        i++;
+        totalPrice += price4;
+        tax1 += totalPrice * taxRate5;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal5(price5) {
+        let shipping = 12;
+        let taxRate6 = 0.5;
+        i++;
+        totalPrice += price5;
+        tax1 += totalPrice * taxRate6;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal6(price6) {
+        let shipping = 12;
+        let taxRate7 = 0.5;
+        i++;
+        totalPrice += price6;
+        tax1 += totalPrice * taxRate7;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal7(price7) {
+        let shipping = 12;
+        let taxRate8 = 0.5;
+        i++;
+        totalPrice += price7;
+        tax1 += totalPrice * taxRate8;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      function calTotal8(price8) {
+        let shipping = 12;
+        let taxRate9 = 0.5;
+        i++;
+        totalPrice += price8;
+        tax1 += totalPrice * taxRate9;
+        let grandTotal = totalPrice + shipping + tax1;
+        document.getElementById("cost").textContent = i;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost2").textContent = "$ " + shipping;
+        document.getElementById("cost3").textContent = "$ " + tax1.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+      // console.log("Selected Items: 0");
+      // console.log("Total Price: $" + totalPrice.toFixed(2));
+      // console.log("Shipping: $" + shipping.toFixed(2));
+      // console.log("Tax: $" + tax.toFixed(2));
+      // console.log("Grand Total: $" + grandTotal.toFixed(2));
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<!-- <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .main-container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      #leftside {
+        width: 75%;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      #rightside {
+        border-radius: 9px;
+        margin-right: 5px;
+        width: 25%;
+        background-color: antiquewhite;
+        padding: 20px;
+        position: sticky;
+        top: 40px; /* Adjust this value to where it should "stick" from */
+        height: fit-content;
+      }
+      .nav-link,
+      .text-log {
+        color: white;
+      }
+      .col {
+        margin: 2px;
+        width: 30%;
+        margin-top: 80px;
+        margin-left: 30px;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 0;
+      }
+      #reviewOrd {
+        border: 2px solid black;
+        padding: 6px;
+        align-items: center;
+        outline: none;
+        text-decoration: none;
+        border-radius: 8px;
+        background-color: black;
+        color: antiquewhite;
+      }
+
+      @media (max-width: 768px) {
+        .main-container {
+          flex-direction: column;
+        }
+
+        #leftside,
+        #rightside {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid" style="background-color: black">
+        <a class="navbar-brand" href="#">
+          <img
+            src="#"
+            alt="Logo"
+            width="50"
+            height="44"
+            class="d-inline-block align-text-top"
+          />
+          <span class="text-log">MayZinThaw</span>
+        </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <section id="leftside">
+        <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+          <div class="col">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(4)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(2)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(3)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(4)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(5)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(6)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(7)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(8)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col" class="hidden">
+            <div class="card h-50">
+              <img
+                src="images/monarch-orange-butterfly-bright-summer-flowers-background-blue-foliage-fairy-garden-macro-artistic-image-monarch-167030287.webp"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+              <div class="card-footer" style="background-color: antiquewhite">
+                <button
+                  id="but-atc"
+                  style="
+                    margin-left: 40%;
+                    outline: none;
+                    border: none;
+                    background-color: antiquewhite;
+                  "
+                  onclick="calTotal(9)"
+                >
+                  Add To Cart<i
+                    class="fa-solid fa-cart-shopping"
+                    style="margin-left: 10px"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rightside">
+        <h1>Order Summery</h1>
+        <p>Selected Items:<span id="cost">$0.00</span></p>
+        <p>Total price:<span id="cost1">$0.00</span></p>
+        <p>Tax:<span id="cost3">$0.00</span></p>
+        <p>Grand Total:<span id="cost4">$0.00</span></p>
+        <a href="b.html" id="reviewOrd">Review Orders</a>
+      </section>
+    </div>
+
+    <script>
+      let totalPrice = 0;
+      let itemCount = 0;
+      let totalTax = 0;
+      let totalShipping = 0;
+
+      function calTotal(price, taxRate = 0.1) {
+        itemCount++;
+        totalPrice += price;
+        totalTax += price * taxRate;
+        const grandTotal = totalPrice + totalTax;
+
+        document.getElementById("cost").textContent = itemCount;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost3").textContent =
+          "$ " + totalTax.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+    </script>
+  </body>
+</html> -->
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HalloMart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+        font-family: "Lato", sans-serif;
+      }
+      .navsta {
+        top: 1px;
+        position: sticky;
+        z-index: 1000;
+      }
+      .main-container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+      }
+      .shop-name {
+        font-family: Dancing Script;
+        font-weight: bold;
+        font-size: 50px;
+        margin-bottom: -100px;
+      }
+      #leftside {
+        width: 75%;
+        padding: 10px;
+        margin: 20px;
+      }
+      .head1 {
+        height: 300px;
+        background-color: antiquewhite;
+        border-radius: 9px;
+        padding: 20px;
+      }
+      .carousel-item {
+        height: 200px;
+      }
+      #rightside {
+        margin-top: 80px;
+        width: 25%;
+        background-color: antiquewhite;
+        padding: 20px;
+        position: sticky;
+        top: 110px;
+        height: 100%;
+        border-radius: 9px;
+        z-index: 10000;
+        margin-right: 30px;
+      }
+      .nav-link,
+      .text-log {
+        color: white;
+      }
+      .nav-link:hover {
+        color: blanchedalmond;
+      }
+      .col {
+        margin: 2px;
+        width: 30%;
+        margin-top: 80px;
+        margin-left: 30px;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 0;
+      }
+      .addCart {
+        background-color: antiquewhite;
+        color: black;
+
+        border: none;
+      }
+      .addCart:hover {
+        background-color: black;
+        color: antiquewhite;
+      }
+      #reviewOrd {
+        border: 2px solid black;
+        padding: 6px;
+        align-items: center;
+        outline: none;
+        text-decoration: none;
+        border-radius: 8px;
+        background-color: black;
+        color: antiquewhite;
+        cursor: pointer;
+      }
+      #reviewOrd:hover {
+        background-color: antiquewhite;
+        color: black;
+      }
+      .imgbg {
+        background-color: antiquewhite;
+        border-radius: 9px;
+        padding: 100px;
+      }
+      @media (max-width: 400px) {
+        .navsta {
+          top: 1px;
+          position: sticky;
+          z-index: 1000;
+        }
+        .main-container {
+          display: flex;
+          width: 100%;
+          min-height: 100vh;
+        }
+        .shop-name {
+          font-family: Dancing Script;
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: -100px;
+        }
+        #leftside {
+          width: 75%;
+          padding: 10px;
+          margin: 20px;
+        }
+        .head1 {
+          height: 300px;
+          background-color: antiquewhite;
+          border-radius: 9px;
+          padding: 20px;
+        }
+        .carousel-item {
+          height: 100px;
+        }
+        #rightside {
+          margin-top: 80px;
+          width: 25%;
+          background-color: antiquewhite;
+          padding: 20px;
+          position: sticky;
+          top: 110px;
+          height: 100%;
+          border-radius: 9px;
+          z-index: 10000;
+          margin-right: 30px;
+        }
+        .nav-link,
+        .text-log {
+          color: white;
+        }
+        .nav-link:hover {
+          color: blanchedalmond;
+        }
+        .col {
+          margin: 2px;
+          width: 30%;
+          margin-top: 80px;
+          margin-left: 30px;
+          border: 1px solid black;
+          border-radius: 8px;
+          padding: 0;
+        }
+        .addCart {
+          background-color: antiquewhite;
+          color: black;
+
+          border: none;
+        }
+        .addCart:hover {
+          background-color: black;
+          color: antiquewhite;
+        }
+        #reviewOrd {
+          border: 2px solid black;
+          padding: 6px;
+          align-items: center;
+          outline: none;
+          text-decoration: none;
+          border-radius: 8px;
+          background-color: black;
+          color: antiquewhite;
+          cursor: pointer;
+        }
+        #reviewOrd:hover {
+          background-color: antiquewhite;
+          color: black;
+        }
+        .imgbg {
+          background-color: antiquewhite;
+          border-radius: 9px;
+          padding: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navsta">
+      <div class="container-fluid" style="background-color: black">
+        <a class="navbar-brand" href="#">
+          <img
+            src="images/logo1.png"
+            alt="Logo"
+            width="76"
+            height="70"
+            class="d-inline-block align-text-top"
+          />
+          <span
+            class="text-log"
+            style="font-family: Dancing Script; font-size: 30px; color: white"
+          >
+            HalloMart
+          </span>
+        </a>
+
+        <!-- Toggler Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto navlist">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="index.html"
+                >Shop</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="inventory.html">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <section id="leftside">
+        <div class="container mt-5">
+          <div class="head1">
+            <h1 class="shop-name">HalloMart</h1>
+            <p class="tagline" style="display: inline; font-size: 25px">
+              Your everyday essentials in one place
+            </p>
+            <img
+              src="images/h1.png"
+              style="
+                width: 250px;
+                padding-bottom: 20px;
+                margin-left: 200px;
+                width: 18rem;
+                display: inline;
+                border: none;
+                text-decoration: none;
+              "
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+        </div>
+        <h2 style="margin-top: 80px">Products</h2>
+        <div class="row" id="product-container"></div>
+      </section>
+
+      <section id="rightside">
+        <h1>Order Summary</h1>
+        <p>Selected Items: <span id="cost">0</span></p>
+        <p>Total price: <span id="cost1">$0.00</span></p>
+        <p>Tax: <span id="cost2">$0.00</span></p>
+        <p>Grand Total: <span id="cost3">$0.00</span></p>
+        <a href="#" id="reviewOrd">Review Orders</a>
+      </section>
+    </div>
+
+    <script src="fetchapi.js"></script>
+  </body>
+</html> -->

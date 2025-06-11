@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .main-container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      #leftside {
+        width: 75%;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      #rightside {
+        border-radius: 9px;
+        margin-right: 5px;
+        width: 25%;
+        background-color: antiquewhite;
+        padding: 20px;
+        position: sticky;
+        top: 40px; /* Adjust this value to where it should "stick" from */
+        height: fit-content;
+      }
+      .nav-link,
+      .text-log {
+        color: white;
+      }
+      .col {
+        margin: 2px;
+        width: 30%;
+        margin-top: 80px;
+        margin-left: 30px;
+        border: 1px solid black;
+        border-radius: 8px;
+        padding: 0;
+      }
+      #reviewOrd {
+        border: 2px solid black;
+        padding: 6px;
+        align-items: center;
+        outline: none;
+        text-decoration: none;
+        border-radius: 8px;
+        background-color: black;
+        color: antiquewhite;
+      }
+
+      @media (max-width: 768px) {
+        .main-container {
+          flex-direction: column;
+        }
+
+        #leftside,
+        #rightside {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid" style="background-color: black">
+        <a class="navbar-brand" href="#">
+          <img
+            src="#"
+            alt="Logo"
+            width="50"
+            height="44"
+            class="d-inline-block align-text-top"
+          />
+          <span class="text-log">MayZinThaw</span>
+        </a>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <section id="leftside">
+        <section class="container mt-4">
+          <div class="row row-cols-1 row-cols-md-3 g-4 hidden">
+            <div class="col">
+              <div class="card h-50">
+                <img
+                  src="images/butterfly.jpg"
+                  class="card-img-top"
+                  alt="Butterfly"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Butterfly</h5>
+                  <p class="card-text">A beautiful monarch butterfly.</p>
+                </div>
+                <div class="card-footer">
+                  <button
+                    class="add-to-cart btn btn-warning"
+                    data-id="1"
+                    data-title="Butterfly"
+                    data-price="15"
+                    data-img="images/butterfly.jpg"
+                    onclick="calTotal()"
+                    ;
+                    id=""
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-50">
+                <img
+                  src="images/butterfly.jpg"
+                  class="card-img-top"
+                  alt="Butterfly"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Butterfly</h5>
+                  <p class="card-text">A beautiful monarch butterfly.</p>
+                </div>
+                <div class="card-footer">
+                  <button
+                    class="add-to-cart btn btn-warning"
+                    data-id="1"
+                    data-title="Butterfly"
+                    data-price="15"
+                    data-img="images/butterfly.jpg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-50">
+                <img
+                  src="images/butterfly.jpg"
+                  class="card-img-top"
+                  alt="Butterfly"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Butterfly</h5>
+                  <p class="card-text">A beautiful monarch butterfly.</p>
+                </div>
+                <div class="card-footer">
+                  <button
+                    class="add-to-cart btn btn-warning"
+                    data-id="1"
+                    data-title="Butterfly"
+                    data-price="15"
+                    data-img="images/butterfly.jpg"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Add more products here -->
+          </div>
+        </section>
+      </section>
+
+      <section id="rightside">
+        <h1>Order Summery</h1>
+        <p>Selected Items:<span id="cost">$0.00</span></p>
+        <p>Total price:<span id="cost1">$0.00</span></p>
+        <p>Tax:<span id="cost3">$0.00</span></p>
+        <p>Grand Total:<span id="cost4">$0.00</span></p>
+        <a href="b.html" id="reviewOrd">Review Orders</a>
+      </section>
+    </div>
+    <script src="home.js"></script>
+    <script>
+      let totalPrice = 0;
+      let itemCount = 0;
+      let totalTax = 0;
+      let totalShipping = 0;
+
+      function calTotal(price, taxRate = 0.1) {
+        itemCount++;
+        totalPrice += price;
+        totalTax += price * taxRate;
+        const grandTotal = totalPrice + totalTax;
+
+        document.getElementById("cost").textContent = itemCount;
+        document.getElementById("cost1").textContent =
+          "$ " + totalPrice.toFixed(2);
+        document.getElementById("cost3").textContent =
+          "$ " + totalTax.toFixed(2);
+        document.getElementById("cost4").textContent =
+          "$ " + grandTotal.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
