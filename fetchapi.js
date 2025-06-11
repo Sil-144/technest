@@ -23,7 +23,8 @@ fetch("https://dummyjson.com/products/search?q=phone")
       col.id = `product-${index}`;
       col.dataset.price = product.price;
       col.innerHTML = `
-               <div class="card h-100">
+                <div id="cardbor">
+               <div class="card h-100 ">
                  <img src="${product.thumbnail}" class="card-img-top p-3 imgbg" alt="${product.title}" />
                  <div class="card-body d-flex flex-column">
                    <h5 class="card-title">${product.title}</h5
@@ -32,6 +33,7 @@ fetch("https://dummyjson.com/products/search?q=phone")
                    <div class="quantity-label text-success  mb-2"></div>
                    <button class="add-to-cart mt-auto btn btn-primary addCart">Add To Cart<i class="fa-solid fa-cart-shopping" style="padding-left:20px"></i></button>
                  </div>
+               </div>
                </div>`;
       container.appendChild(col);
       col.querySelector(".add-to-cart").addEventListener("click", () => {
