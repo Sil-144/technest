@@ -73,11 +73,10 @@ h2 {
 }
 
 .col {
-  margin: 10px;
-  width: calc(100% - 20px);
   border: 1px solid black;
   border-radius: 8px;
   padding: 0;
+  margin-bottom: 20px;
 }
 
 .addCart {
@@ -115,8 +114,10 @@ h2 {
   border-radius: 6px;
   font-weight: bold;
 }
-
-@media (min-width: 468px) {
+#cardbor {
+  height: 650px;
+}
+@media (min-width: 368px) {
   #leftside {
     flex: 2;
   }
@@ -127,7 +128,7 @@ h2 {
     margin-left: 20px;
     height: fit-content;
   }
-  .col {
-    width: 30%;
+  #cardbor {
+    display: inline-flex;
   }
 }
